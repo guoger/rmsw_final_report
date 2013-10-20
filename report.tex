@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{article}
+
+\textwidth=15cm \hoffset=-1.2cm %
+\textheight=25cm \voffset=-2cm %
+\pagestyle{empty}
+
+\date{}
+
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{acronym}
+\usepackage{standalone}
+\usepackage{url}
+\usepackage{cite}
+
+\def\keywords#1{\begin{center}{\bf Keywords}\\{#1}\end{center}} %
+
+\def\titulo#1{\title{#1}} %
+\def\autores#1{\author{#1}} %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+% Type down your paper title
+\titulo{Gossip-based Aggregation blah}
+
+% Authors
+\autores{
+Niklas Semmler, Jiannan Guo\\
+KTH Royal Institute of Technology (Sweden)\\
+}%
+
+\maketitle
+
+\begin{abstract}
+Motivated by increase of peer-to-peer network and {\it ad hoc} sensor networks, we study distributed algorithm, also known as gossip algorithm, which is for exchanging information and message dissemination. As aggregating network information and enabling local access to this information are crucial to manage a large scale networks, gossip-based aggregation facilitates management of networks in a completely decentralized manner. This study focuses on the extracting the relation between convergence speed and connectivity of graph, addressing several real network topologies.
+%TODO: add conclusion
+\end{abstract}
+
+\keywords{Gossip-based aggregation, performance}% TODO: refine keywords
+
+blah \cite{jelasity_gossip-based_2005}
+\cite{massoulie_peer_2006}
+
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%%%%%% Begin of Chapters %%%%%%%%
+
+\input{ch1}
+\input{ch2}
+
+%%%%%% End of Chapters %%%%%%%%%%
+
+\bibliographystyle{plain}
+\bibliography{report}
+
+\appendix
+
+
+\end{document}
