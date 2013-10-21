@@ -21,6 +21,11 @@ Implementation
 
 graphml -> configs -> uml machines
 \section{Simulation/Emulation of gossip-based aggregation}
+To evaluate the value of the gossip-based aggregation it is necessary to see it in the wild of a real network environment. Unfortunately the setup of a real network is to time and cost intensive. Hence the next best thing was chosen: A network emulation. In a network simulation the network is simplified so as to illuminate a certain set of behaviours. (REF ns) An emulation in contrast consists of all the elements of the real network only that the resources are not "real" but "virtual". While for example an emulated switch may process network traffic in the very same way as a switch in your office, it could be implemented as a linux process.
+In this research the netkit emulation framework (itself a wrapper to user mode linux) was chosen. Netkit (REF Netkit) creates virtual linux machines from a set of configuration files. These virtual machines are automatically connected through usermode processes called "uml\_switch". It is possible to logon to the machines via ssh and configure them just like any other linux machines. This allows great freedom to try and test software which otherwise would be hard to implement.
+The initial set of configuration files were created with the tool Autonetkit using network graphs from the "Topology Zoo". The "Topology Zoo" is a collection of around two hundred fifty graphs of telecommunication networks. The graphs are open for use and give a good idea on the reality of communication networks. Simon Knight, one of the founder of the topology zoo has developed the tool Autonetkit. It takes a graph xml file (graphml) and constructs over a series of abstractions configuration files from OSPF to DNS.
+For the purpose of this experiment the
+number of assumptions are created to take only the relevant creating a number of assumptions an emulation In contrast to a simulation a network emulation contains
 \subsection{Topology Zoo}
 * "two hundred and fifty networks in the Zoo"
 * communication networks of real telecommunication providers
