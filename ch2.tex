@@ -14,7 +14,7 @@
 
 \section{Chapter 2}
 \subsection{Related work}
-Motivated by peer-to-peer and {\it ad hoc} networks, a considerable number of studies have been done regarding gossip-based algorithms. Convergence and upper bound consensus time have been proved by J.Lavaei and R.Murray in \cite{5929538}. Analytical methods and simulations have been utilized to discuss the relations between performance of gossip protocols and topology of network, namely randomness, connectivity etc. As a subcategory of distributed algorithm, different models, such as synchronous and asynchronous models, with or without churn, are discussed in \cite{Lynch:1996:DA:525656}. The optimization of parameters of an asynchronous randomized gossip algorithm for fasted convergence is proved to be semi-definite problem \cite{1429652}.\\
+Motivated by peer-to-peer and {\it ad hoc} networks, a considerable number of studies have been done regarding gossip-based algorithms. Convergence and upper bound consensus time have been proved by J.Lavaei and R.Murray in \cite{5929538}. Analytical methods and simulations have been utilized to discuss the relations between performance of gossip protocols and topology of network, namely randomness, connectivity etc. As a subcategory of distributed algorithm, different models, such as synchronous and asynchronous models, with or without churn, are discussed in \cite{Lynch:1996:DA:525656}. The optimization of parameters of an asynchronous randomized gossip algorithm for fasted convergence is proved to be semi-definite problem \cite{Boyd2004}.\\
 This study is mainly based on the work of M.Jelasity, A.Montresor and O.Babaoglu \cite{jelasity_gossip-based_2005}, focusing on existing static networks of different topologies \cite{knight_internet_2011}
 
 \subsection{Gossip-based aggregation}
@@ -30,12 +30,31 @@ Although convergence is proved and expected convergence time can be estimated by
 
 \subsection{Impact of topology toward the performance of aggregation}
 A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.
-In this study, we focus on extracting proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{0256-307X-25-11-093}. 
+In this study, we focus on extracting proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{entropy1} and \cite{entropy2}.
 %TODO: describe definition in detail
-In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor result in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.
 
+%%% put into future work %%%
+In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Applying to real network}
+In order to apply control variable experiment method, we based our experiment on 4 real network topologies with same number of nodes (37) and different number of links, as showed in Table \ref{table: network}. Entropies are also calculated by applying methods presented by \cite{entropy1} (referred in the table as Entropy1) \cite{entropy2} (referred in the table as Entropy2).
+\begin{table}
+\centering
+\begin{tabular}{lrrrrr}
+	\hline
+	Name of Network & Year & Country & \# of Links & Entropy1 & Entropy2\\
+    \hline
+    Reuna & 2010 & Chile & 36 & 202.0476 & 0.5164084\\
+    BREN & 2010 & Bulgaria & 38 & 210.2229 & 0.6214745\\
+    Geant & 2010 & Europe & 58 & 277.3282 & 1.530375\\
+    Iij & 2010 & Japen, USA & 66 & 307.2482 & 1.553654\\
+    \hline
+\end{tabular}
+\label{table: network}
+\end{table}
+
+%implementing details
 
 
 \end{document}
