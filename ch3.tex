@@ -10,7 +10,6 @@
 \usepackage{amsmath}
 
 \begin{document}
-\newpage
 
 \section{Chapter 3}
 Implementation
@@ -20,7 +19,7 @@ Implementation
 * Python Daemon
 
 graphml -> configs -> uml machines
-\section{Simulation/Emulation of gossip-based aggregation}
+\subsection{Simulation/Emulation of gossip-based aggregation}
 To evaluate the value of the gossip-based aggregation it is necessary to see it in the wild of a real network environment. Unfortunately the setup of a real network is to time and cost intensive. Hence the next best thing was chosen: A network emulation. In a network simulation the network is simplified so as to illuminate a certain set of behaviours. (REF ns) An emulation in contrast consists of all the elements of the real network only that the resources are not "real" but "virtual". While for example an emulated switch may process network traffic in the very same way as a switch in your office, it could be implemented as a linux process.
 In this research the netkit emulation framework (itself a wrapper to user mode linux) was chosen. Netkit (REF Netkit) creates virtual linux machines from a set of configuration files. These virtual machines are automatically connected through usermode processes called "uml\_switch". It is possible to logon to the machines via ssh and configure them just like any other linux machines. This allows great freedom to try and test software which otherwise would be hard to implement.
 The initial set of configuration files were created with the tool Autonetkit using network graphs from the "Topology Zoo". The "Topology Zoo" is a collection of around two hundred fifty graphs of telecommunication networks. The graphs are open for use and give a good idea on the reality of communication networks. Simon Knight, one of the founder of the topology zoo has developed the tool Autonetkit. It takes a graph xml file (graphml) and constructs over a series of abstractions configuration files from OSPF to DNS.
@@ -38,8 +37,8 @@ number of assumptions are created to take only the relevant creating a number of
 * multiple layers of abstraction
 * we customized this so that every node stores a list of all it's neighbours and corresponding IP addresses
 
-\section{Implementation of gossip-based aggregation protocol in virtual networks}
-\subsection{Netkit & UML}
+\subsection{Implementation of gossip-based aggregation protocol in virtual networks}
+\subsubsection{Netkit \& UML}
 * Netkit a framework to do network experiments
 * What is an emulation
 * Uses User Mode Machines, the linux kernel is started as a userlevel process
@@ -47,12 +46,12 @@ number of assumptions are created to take only the relevant creating a number of
 * network is created by using processes as switches between the linux kernel processses
 
 pseudo code -> python scripts -> csv -> R scripts -> graphs
-\subsection{Gossip Daemon}
+\subsubsection{Gossip Daemon}
 * written in python
 * based on a modular structure of socket, epoch and state modules
 * difficulties in combining multithreading with network
 
-\subsection{R scripts}
+\subsubsection{R scripts}
 ...
 
 \end{document}
