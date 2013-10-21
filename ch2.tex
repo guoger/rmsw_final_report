@@ -7,14 +7,35 @@
 \usepackage{acronym}
 \usepackage{url}
 \usepackage{cite}
+\usepackage{amsmath}
 
 \begin{document}
 \newpage
 
-\section{Chapter 1}
-\subsection{Gossip-based aggregation algorithm}
-Since peer-to-peer and {\it ad hoc} networks are becoming an upward trend, a considerable number of studies have been done regarding gossip-based algorithms. Analytical methods and simulations have been utilized to discuss the relations between performance of gossip protocols and topology of network, namely randomness, connectivity etc. This study is mainly based on the work of M.Jelasity, A.Montresor and O.Babaoglu \cite{jelasity_gossip-based_2005}, focusing on existing static networks of different topologies.\\
+\section{Chapter 2}
+\subsection{Related work}
+Motivated by peer-to-peer and {\it ad hoc} networks, a considerable number of studies have been done regarding gossip-based algorithms. Convergence and upper bound consensus time have been proved by J.Lavaei and R.Murray in \cite{5929538}. Analytical methods and simulations have been utilized to discuss the relations between performance of gossip protocols and topology of network, namely randomness, connectivity etc. As a subcategory of distributed algorithm, different models, such as synchronous and asynchronous models, with or without churn, are discussed in \cite{Lynch:1996:DA:525656}. The optimization of parameters of an asynchronous randomized gossip algorithm for fasted convergence is proved to be semi-definite problem \cite{1429652}.\\
+This study is mainly based on the work of M.Jelasity, A.Montresor and O.Babaoglu \cite{jelasity_gossip-based_2005}, focusing on existing static networks of different topologies \cite{knight_internet_2011}
+
+\subsection{Gossip-based aggregation}
+%TODO: describe the algorithm in details
+A simple implementation of synchronous gossip-based aggregation algorithm, inspired by \cite{jelasity_gossip-based_2005} can be illustrated by following pseudo code,
+\begin{verbatim}
+hello, world!%TODO: pseudo code
+\end{verbatim}
+For better understanding of aggregation mechanism, we assume a graph as in Figure
+%Graphs to demonstrate algorithm in details
+
+Although convergence is proved and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain a empirical criteria according to the result of experiments.\\
+
+\subsection{Impact of topology toward the performance of aggregation}
+A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.
+In this study, we focus on extracting proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{0256-307X-25-11-093}. 
+%TODO: describe definition in detail
+In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor result in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.
+
 
 \subsection{Applying to real network}
+
 
 \end{document}
