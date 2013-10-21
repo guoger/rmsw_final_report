@@ -13,8 +13,39 @@
 \newpage
 
 \section{Chapter 3}
+Implementation
+* Topology Zoo
+* Autonetkit
+* Emulator
+* Python Daemon
 
+graphml -> configs -> uml machines
+\subsection{Topology Zoo}
+* "two hundred and fifty networks in the Zoo"
+* communication networks of real telecommunication providers
+* gallery and graphml files
+* processed to remove multiple links between nodes (simplification)
 
+\subsection{Autonetkit}
+* By Simon Knight, also worked on topology zoo
+* Translates graph file to linux configurations files (Qugga, Scripts, ...)
+* multiple layers of abstraction
+* we customized this so that every node stores a list of all it's neighbours and corresponding IP addresses
 
+\subsection{Netkit & UML}
+* Netkit a framework to do network experiments
+* What is an emulation
+* Uses User Mode Machines, the linux kernel is started as a userlevel process
+* Combines kernel with a filesystem used mostly for pedagogic purposes
+* network is created by using processes as switches between the linux kernel processses
+
+pseudo code -> python scripts -> csv -> R scripts -> graphs
+\subsection{Gossip Daemon}
+* written in python
+* based on a modular structure of socket, epoch and state modules
+* difficulties in combining multithreading with network
+
+\subsection{R scripts}
+...
 
 \end{document}
