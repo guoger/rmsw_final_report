@@ -15,11 +15,11 @@
 \section{Future works}
 
 \subsection{More comprehensive emulation}
+Since we assume an undirected unweighted static topology, some other crucial properties of a real network are not reflected in our study, such as link speed and congestions. Although, in real backbone networks, node leaving and joining are not likely to happen, but packet loss and delay could be modeled into churn mechanism and should be considered in future work.\\
 
 \subsection{Relation between the performance and other properties of graph}
-
-%%% put into future work %%%
-In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.\\
+Although, to apply this model in a real network, reverse procedures need to be done to determine randomness parameter $\beta$ of a given graph $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$. Mapping this back to the study of \cite{jelasity_gossip-based_2005} can give a better understanding how topology impact convergence time.\\
+Other than this factor, graph clustering \cite{Schaeffer200727}, max-flow and min-cut \cite{PapadimitriouS82} could also be derived from these graphs and relationship between them and gossip algorithm performance can be further discussed.\\
 
 \end{document}
