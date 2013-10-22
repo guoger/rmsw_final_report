@@ -22,7 +22,14 @@ The initial set of configuration files were created with the tool Autonetkit \ci
 \subsection{Implementation of gossip-based aggregation daemon}
 As the gossip agent in our emulated network we developed a daemon based on the pseudo code of the gossip-based aggregation algorithm (REF: section 2 or article). The programming language Python \cite{python} was chosen for this task as it's simplicity and clarity enable a rapid development. Packets between nodes were exchanged in short lived TCP conections. The daemons on the individual nodes are started from outside the emulation system and write a log and results to the host system. After a number of periods (epochs) the daemons exit.
 
-Two threads are coexisting. The active thread connects to randomly chosen neighbours at a predefined interval (epoch duration). The passive thread accepts connection all the time. Each thread update a state after a succesful connection. To make the state develop linearly both threads have to compete for a lock before establishing a connection. (Combining multithreading with networking led to some problems, especially when two nodes chose to actively create a connection with each other at the same time.)
+Two threads are coexisting (see figure \ref{fig:flow_diag}). The active thread connects to randomly chosen neighbours at a predefined interval (epoch duration). The passive thread accepts connection all the time. Each thread update a state after a succesful connection. To make the state develop linearly both threads have to compete for a lock before establishing a connection. (Combining multithreading with networking led to some problems, especially when two nodes chose to actively create a connection with each other at the same time.)
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[scale=0.25]{flow_diag.jpg}
+    \end{center}
+    \caption{Flow diagram of the threads}
+    \label{fig:flow_diag}
+\end{figure}
 
 Data created this way over one graph is analyzed in R. We compare multiple runs of an experiment over one graph and experiments inbetween graphs. The results are visualized as graphs.
 
