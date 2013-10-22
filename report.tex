@@ -29,10 +29,15 @@
 
 \begin{document}
 % Type down your paper title
+<<<<<<< HEAD
 \titulo{Evaluating Gossip-based Aggregation}
 %
+=======
+\title{Evaluating Gossip-based aggregation\\An experimental study using network emulation}
+
+>>>>>>> 2b3ff224e068d60e1e496f87e65cb405dbdeb379
 % Authors
-\autores{
+\author{
 Niklas Semmler, Jiannan Guo\\
 KTH Royal Institute of Technology\\
 }%
@@ -41,18 +46,22 @@ KTH Royal Institute of Technology\\
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \HRule \\[0.4cm]
 \begin{abstract}
-Motivated by increase of peer-to-peer network and {\it ad hoc} sensor networks, we study distributed algorithm, also known as gossip algorithm, which is for exchanging information and message dissemination. As aggregating network information and enabling local access to this information are crucial to manage a large scale networks, gossip-based aggregation facilitates management of networks in a completely decentralized manner. This study focuses on the extracting the relation between convergence speed and connectivity of graph, addressing several real network topologies.
+In this study we briefly introduce the gossip algorithm and aggregation mechanism. We address the influence of network topologies on the performance of a gossip-based aggregation algorithm. Several analytical studies are discussed. We make two hypothesis regarding the relation between algorithm performance and underlying topologies. A basic gossip-based aggregation is implemented and it's performance is determined in a network emulator. Four different network topologies serve as our conditions. We collect data out of experiments and utilize statistical method to verify our hypothesis.
 %TODO: add conclusion
 \end{abstract}
 \HRule \\[0.4cm]
 
-\keywords{Gossip-based aggregation, performance}% TODO: refine keywords
+\keywords{Gossip-based aggregation, network emulation}% TODO: refine keywords
 
-\cite{entropy2}
-
+<<<<<<< HEAD
 %\newpage
 %\tableofcontents
 %\newpage
+=======
+\newpage
+\tableofcontents
+\newpage
+>>>>>>> 2b3ff224e068d60e1e496f87e65cb405dbdeb379
 
 %%%%%% Begin of Chapters %%%%%%%%
 
@@ -62,6 +71,8 @@ Motivated by increase of peer-to-peer network and {\it ad hoc} sensor networks, 
 \input{ch5}
 
 %%%%%% End of Chapters %%%%%%%%%%
+
+\newpage
 
 \bibliographystyle{plain}
 \bibliography{report}

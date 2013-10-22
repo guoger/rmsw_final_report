@@ -1,25 +1,14 @@
 \section{Theory}
 \label{sec:theory}
 \subsection{Gossip-based aggregation}
+\subsection{Related work}
+Motivated by peer-to-peer and {\it ad hoc} networks, a considerable number of studies have been done regarding gossip-based algorithms. Convergence and upper bound consensus time have been proved by J.Lavaei and R.Murray in \cite{5929538}. Analytical methods and simulations have been utilized to discuss the relations between performance of gossip protocols and topology of network, namely randomness, connectivity etc. As a subcategory of distributed algorithm, different models, such as synchronous and asynchronous models, with or without churn, are discussed in \cite{Lynch:1996:DA:525656}. The optimization of parameters of an asynchronous randomized gossip algorithm for fasted convergence is proved to be semi-definite problem \cite{Boyd2004}.\\
+This study is mainly based on the work of M.Jelasity, A.Montresor and O.Babaoglu \cite{jelasity_gossip-based_2005}, focusing on existing static networks of different topologies \cite{knight_internet_2011}
+
+\subsection{Gossip-based aggregation}
 %TODO: describe the algorithm in details
-A simple implementation of synchronous gossip-based aggregation algorithm, inspired by \cite{jelasity_gossip-based_2005} can be illustrated by the pseudo code in listing \ref{code:pseudo}.
-
-\begin{lstlisting}[caption={Pseudo Code for gossip-based aggregation}, label=code:pseudo, mathescape=true]
-$ActiveGossipThread$
-$\mbox{for each consecutive } \delta \mbox{ time units at randomly picked time; do}$
-    $q \leftarrow GET\_NEIGBOUR()$
-    $send\_to({state}_{p},$ $q)$
-    $state_{q} \leftarrow receive(q)$
-    $state_{p} \leftarrow UPDATE(state_{p},$ ${state}_{q})$
-
-$PassiveGossipThread$
-$\mbox{while true:}$
-    $state_{q} \leftarrow receive(*)$
-    $send\_to(state_{p},$ $q)$
-    $state_{p} \leftarrow UPDATE(state_{p},$ $state_{q})$
-\end{lstlisting}
-
-
+\subsubsection{Gossip algorithm}
+For better understanding of gossip algorithm, we assume a graph as in \ref{fig: epochs}.
 \begin{figure}[!h]
    \begin{minipage}[t]{0.45\textwidth}
       \vspace{0pt}
@@ -44,18 +33,33 @@ $\mbox{while true:}$
    \label{fig:epochs}
 \end{figure}
 
-%Graphs to demonstrate algorithm in details
-For better understanding of aggregation mechanism, we assume a graph as in Figure 
-Table \ref{fig:epochs} illustrates a typical message dissemination process applying gossip algorithm. It starts with one node containing the information to be propagated, as in subgraph (a). It randomly chooses one neighbor and send the message. In second epoch, as showed in subgraph (b), this message is passed forward to next hop in the same manner, including the root node. By recursively applying same procedures, the message will be passed through the whole network eventually. Subgraph (c) shows the occurrence of probable redundant packet from node 3 to node 2, who's already aware of the message. Because of randomness of gossip algorithm, complete dissemination can only be achieved at a certain probability within given epochs, which can be denoted as $D(x)=\int_0^x P(\xi)\mathrm{d}\xi$
+Figure \ref{fig: epochs} illustrates a typical message dissemination process applying gossip algorithm. It starts with one node containing the information to be propagated, as in subgraph (a). It randomly chooses one neighbor and send the message. In second epoch, as showed in subgraph (b), this message is passed forward to next hop in the same manner, including the root node. By recursively applying same procedures, the message will be passed through the whole network eventually. Subgraph (c) shows the occurrence of probable redundant packet from node 3 to node 2, who's already aware of the message. Because of randomness of gossip algorithm, complete dissemination can only be achieved at a certain probability within given epochs, which can be denoted as $D(x)=\int_0^x P(\xi)\mathrm{d}\xi$\\
+
+\subsubsection{Aggregation}
+% TODO: illustrate aggregation
+
+A simple implementation of synchronous gossip-based aggregation algorithm, inspired by \cite{jelasity_gossip-based_2005} can be illustrated by following pseudo code \ref{code:pseudo}.
+\begin{lstlisting}[caption={Pseudo Code for gossip-based aggregation}, label=code:pseudo, mathescape=true]
+$ActiveGossipThread$
+$\mbox{for each consecutive } \delta \mbox{ time units at randomly picked time; do}$
+    $q \leftarrow GET\_NEIGBOUR()$
+    $send\_to({state}_{p},$ $q)$
+    $state_{q} \leftarrow receive(q)$
+    $state_{p} \leftarrow UPDATE(state_{p},$ ${state}_{q})$
+
+$PassiveGossipThread$
+$\mbox{while true:}$
+    $state_{q} \leftarrow receive(*)$
+    $send\_to(state_{p},$ $q)$
+    $state_{p} \leftarrow UPDATE(state_{p},$ $state_{q})$
+\end{lstlisting}
 
 Although convergence is proved and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain a empirical criteria according to the result of experiments.\\
 
 \subsection{Impact of topology toward the performance of aggregation}
-A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.
+A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.\\
 In this study, we firstly focus on investigating the impact of various number of links with the number of nodes unchanged over the performance of gossip-based aggregation algorithm. Then we try to extract proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{entropy1} and \cite{entropy2} and then we apply inductive research method \cite{portal} to address the relation between entropy and convergence time.
 %TODO: describe definition in detail
-
-
 
 \subsection{Applying to real network}
 In order to apply control variable experiment method, we based our experiment on 4 real network topologies with same number of nodes (37) and different number of links, as showed in Table \ref{table: network}. Entropies are also calculated by applying methods presented by \cite{entropy1} (referred in the table as Entropy1) \cite{entropy2} (referred in the table as Entropy2).
