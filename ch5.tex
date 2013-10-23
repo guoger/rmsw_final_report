@@ -2,10 +2,14 @@
 \label{sec:conclusion}
 
 \subsection{Conclusion}
-
+% Strong support for our first hypothesis. The graphs with high number of links (Geant, Iij) converged quickly, while the graphs with low number of links converged slowly or not at all during the experiment.
+% Entropy: What to say here?
+% Real world implications: Gossip algorithm should be only used in densely connected networks or on tasks where slow information dissemination is acceptable. It should not be used on scarcely connected networks on time sensitive tasks.
+% The implementation in a real computer network held some surprises.
+% This experiment is limited by the random nature of the algorithm. As such the experiment should be repeated many times to solidify the results.
 \subsection{Future work}
 \subsubsection{More comprehensive emulation}
-Since we assume an undirected unweighted static topology, some other crucial properties of a real network are not reflected in our study, such as link speed and congestions. Although, in real backbone networks, node leaving and joining are not likely to happen, but packet loss and delay could be modeled into churn mechanism and should be considered in future work.\\
+Since we assume an undirected unweighted static topology, some other crucial properties of a real network are not reflected in our study, such as link speed and congestion. Although, in real backbone networks, node leaving and joining are not likely to happen, but packet loss and delay could be modeled into churn mechanism and should be considered in future work.\\
 
 \subsubsection{Relation between the performance and other properties of graph}
 In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.\\

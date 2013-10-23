@@ -43,7 +43,7 @@ A simple implementation of synchronous gossip-based aggregation algorithm, inspi
 \begin{lstlisting}[caption={Pseudo Code for gossip-based aggregation}, label=code:pseudo, mathescape=true, captionpos=b]
 $ActiveGossipThread$
 $\mbox{for each consecutive } \delta \mbox{ time units at randomly picked time; do}$
-    $q \leftarrow GET\_NEIGBOUR()$
+    $q \leftarrow GET\_NEIGBOR()$
     $send\_to({state}_{p},$ $q)$
     $state_{q} \leftarrow receive(q)$
     $state_{p} \leftarrow UPDATE(state_{p},$ ${state}_{q})$
@@ -56,16 +56,16 @@ $\mbox{while true:}$
 \end{lstlisting}
 \end{figure}
 
-Although convergence is proved and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain a empirical criteria according to the result of experiments.
+Although convergence is proven and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain a empirical criteria according to the result of experiments.
 
 \subsection{Impact of topology toward the performance of aggregation}
 A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.
 
-In this study, we firstly focus on investigating the impact of various number of links with the number of nodes unchanged over the performance of gossip-based aggregation algorithm. Then we try to extract proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{entropy1} and \cite{entropy2} and then we apply inductive research method \cite{portal} to address the relation between entropy and convergence time.
+In this study, we firstly focus on investigating the impact of various number of links with the number of nodes unchanged over the performance of gossip-based aggregation algorithm. %Then we try to extract proper parameters representing a unweighted undirected connected graph through applying the definition of entropy presented by \cite{entropy1} and \cite{entropy2} and then we apply inductive research method \cite{portal} to address the relation between entropy and convergence time.
 %TODO: describe definition in detail
 
 \subsection{Applying to real network}
-In order to apply control variable experiment method, we based our experiment on 4 real network topologies (see figure \ref{fig:graphs}) with same number of nodes (37) and different number of links, as showed in Table \ref{table:network}. Entropies are also calculated by applying methods presented by \cite{entropy1} (referred in the table as Entropy1) \cite{entropy2} (referred in the table as Entropy2).
+In order to apply control variable experiment method, we based our experiment on 4 real network topologies (see figure \ref{fig:graphs}) with same number of nodes (37) and different number of links, as showed in Table \ref{table:network}. %Entropies are also calculated by applying methods presented by \cite{entropy1} (referred in the table as Entropy1) \cite{entropy2} (referred in the table as Entropy2).
 
 \begin{figure}[h!]
    \begin{minipage}[t]{0.45\textwidth}
@@ -111,8 +111,9 @@ In order to apply control variable experiment method, we based our experiment on
 \end{table}
 
 \subsection{Hypothesis}
-{\it Hypothesis 1.} In a given network topology $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$, the number of links (edges) $N_E$ and convergence time $t$ are positively correlated, with number of nodes (vertices) $N_V$ unchanged.\\
-{\it Hypothesis 2.} In a given network topology $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$, the entropy of this graph $S$ and convergence time $t$ are positively correlated.
+%{\it Hypothesis 1.}
+In a given network topology $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$, the number of links (edges) $N_E$ and convergence time $t$ are positively correlated, with number of nodes (vertices) $N_V$ unchanged.
+%{\it Hypothesis 2.} In a given network topology $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$, the entropy of this graph $S$ and convergence time $t$ are positively correlated.
 
 \subsection{Research methodology and methods}
 We are creating a positivistic investigation grounded in quantitative experiments. With induction in the form of statistical inference, we aim to predict the behavior of the system under question in the boundary of our experimental research.
