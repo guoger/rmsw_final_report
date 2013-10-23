@@ -2,16 +2,17 @@
 \label{sec:conclusion}
 
 \subsection{Conclusion}
-% Strong support for our first hypothesis. The graphs with high number of links (Geant, Iij) converged quickly, while the graphs with low number of links converged slowly or not at all during the experiment.
-% Entropy: What to say here?
-% Real world implications: Gossip algorithm should be only used in densely connected networks or on tasks where slow information dissemination is acceptable. It should not be used on scarcely connected networks on time sensitive tasks.
-% The implementation in a real computer network held some surprises.
-% This experiment is limited by the random nature of the algorithm. As such the experiment should be repeated many times to solidify the results.
+In this paper we have introduced gossip-based aggregation. We have explained it's advantages as a distributed algorithm over centralized algorithms and provided pseudo code. Furthermore we have presented our experiment which was to show the dependency of convergence in gossip-based aggregation on the number of links in the network. We highlighted the methods we used to realize our experiment and in particular why we opted for an emulated network. Finally we analyzed the results of our research and depicted it as charts.
+
+Strong support for our first hypothesis. The graphs with high number of links (Geant, Iij) converged quickly, while the graphs with low number of links converged slowly or not at all during the experiment. Gossip algorithm should be hence only used in densely connected networks or on tasks where slow information dissemination is acceptable. It should not be used on scarcely connected networks on time sensitive tasks. The expressivity of our experiment is however limited by the random nature of the algorithm. As such the experiment should be repeated many times to solidify the results.
+
+We believe that the gossip-based aggregation has very interesting properties for network management. Of course with a toy value, like the one used here for the sake of the experiment, this is difficult to see. But when this value would be replaced with a more network relevant variable such as the general load distribution the perspective changes. Would such a value be available to each node the node could use the global information to optimize its own decisions. By simply changing the next-hop for outgoing packets it would already have a significant impact on the overall error rate of the network (drop rate of packets) can be greatly reduced.
+
 \subsection{Future work}
-\subsubsection{More comprehensive emulation}
+%\subsubsection{More comprehensive emulation}
 Since we assume an undirected unweighted static topology, some other crucial properties of a real network are not reflected in our study, such as link speed and congestion. Although, in real backbone networks, node leaving and joining are not likely to happen, but packet loss and delay could be modeled into churn mechanism and should be considered in future work.\\
 
-\subsubsection{Relation between the performance and other properties of graph}
-In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.\\
-Although, to apply this model in a real network, reverse procedures need to be done to determine randomness parameter $\beta$ of a given graph $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$. Mapping this back to the study of \cite{jelasity_gossip-based_2005} can give a better understanding how topology impact convergence time.\\
-Other than this factor, graph clustering \cite{Schaeffer200727}, max-flow and min-cut \cite{PapadimitriouS82} could also be derived from these graphs and relationship between them and gossip algorithm performance can be further discussed.\\
+%\subsubsection{Relation between the performance and other properties of graph}
+%In \cite{jelasity_gossip-based_2005}, convergence factor $E(2^{-\phi})$ is used to determine convergence time, smaller convergence factor results in faster convergence. The Watts-Strogatz is used to model the topology of overlay network, indicating randomness as an independent variable \cite{Watts1998}. Thus, a function is derived, with randomness parameter $\beta$ as input and convergence factor $E(2^{-\phi})$ as output.\\
+%Although, to apply this model in a real network, reverse procedures need to be done to determine randomness parameter $\beta$ of a given graph $\mathcal{G}=\{\mathcal{E}, \mathcal{V}\}$. Mapping this back to the study of \cite{jelasity_gossip-based_2005} can give a better understanding how topology impact convergence time.\\
+%Other than this factor, graph clustering \cite{Schaeffer200727}, max-flow and min-cut \cite{PapadimitriouS82} could also be derived from these graphs and relationship between them and gossip algorithm performance can be further discussed.\\

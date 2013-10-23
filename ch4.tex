@@ -1,7 +1,4 @@
 \section{Results \& Discussion}
-% aggregation of a random value from 0 to 1000
-As showed in Figure \ref{fig: result}, for each topology, state of every node in every epoch is plotted. Inside 100 epochs all four experiments are in the trend of converging and if we set convergence criteria as 5\% of mean value, Bren, Geant and Iij can be considered as converged inside their run of experiments, accordingly at 75th, 60th and 40th epoch.\\
-Thus, the order of convergence speed can be derived as Iij, Geant, Bren, Reuna, from the fastest to slowest, which verifies our hypothesis.
 \begin{figure}[h!]
 	\centering
     \begin{minipage}[t]{0.47\textwidth}
@@ -27,20 +24,17 @@ Thus, the order of convergence speed can be derived as Iij, Geant, Bren, Reuna, 
     \includegraphics[width=\linewidth]{figures/Iij averaging experiment.png}
     Iij averaging experiment
     \end{minipage}
-    \caption{}
-    \label{fig: result}
-\end{figure}
+    \caption{State changes of all nodes per epoch}
+    \label{fig:result}
 
+\end{figure}
+% aggregation of a random value from 0 to 1000
+The results of our experiments are visualized in figure \ref{fig:result}. The X-axis are the epoch (time intervals) and the Y-axis is the state value. The gossip-based aggregation was run over 100 epochs. Every node started with a value chosen randomly between 0 and 1000. Due to the random nature of the algorithm and the difference in degree of connectivity among nodes a node can have between 1 and N state changes per epoch. (Where N is the amount of nodes in the network.) Overall nodes the number of state changes is 2*N per epoch. (Every node initiates one exchange per epoch which entails two state changes.) All of these changes are depicted.
+
+The graphs are sorted according to number of links per nodes from left to right and top to bottom. Inside 100 epochs all four experiments are in the trend of converging and if we set convergence criteria as 5\% of mean value, Bren, Geant and Iij converge inside their run of experiments, accordingly at the 75th, 60th and the 40th epoch. Reuna does not converge during the 100 epochs of our experiment.
+
+Thus, the order of convergence speed can be derived as Iij, Geant, Bren, Reuna, from the fastest to slowest, which supports our hypothesis.
 
 % explain the graphs
 % Draw a conclusion about the difference
 % compare emulation and simulation
-
-\begin{figure}[h!]
-    \begin{center}
-    \includegraphics[width=\linewidth]{figures/geant_counting_exp.png}
-    \end{center}
-    \caption{Geant counting}
-    \label{fig:geant}
-\end{figure}
-\label{sec:results}
