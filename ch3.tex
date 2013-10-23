@@ -17,8 +17,11 @@ Two threads are coexisting (see figure \ref{fig:flow_diag}). The active thread c
 
 Data created this way over one graph is analyzed in R. We compare our four different topologies (mentioned above) and visualize the results as charts. The code of our program as well as the results below are available at github: \url{https://github.com/metaswirl/py_gossip}
 
-\subsection{Simulation/Emulation of gossip-based aggregation}
-The aim of our experiment is to evaluate gossip based aggregation for real world computer networks. To this end the gossip-based aggregation has to be implemented over a computer network. Unfortunately the setup of a real network is to time and cost intensive. Hence the next best thing was chosen: A network emulation. In a network simulation the network is simplified so as to illuminate a certain set of behaviors (e.g. ns \cite{ns}). An emulation in contrast consists of all the elements of the real network only that the resources are not "real" but "virtual". While for example an emulated switch may process network traffic in the very same way as a switch in your office, it could be implemented as a linux process.
+\subsection{Simulation of gossip-based aggregation}
+In a network simulation the network is simplified so as to illuminate a certain set of behaviors (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is abstracted as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbor is randomly chosen to form a state exchange pair, and then aggregation operation, in this case add and divide by two, is applied. In this manner, convergence and different behaviors of four topologies can be predicted without running the actual emulation.
+\subsection{Emulation of gossip-based aggregation}
+The aim of our experiment is to evaluate gossip based aggregation for real world computer networks. To this end the gossip-based aggregation has to be implemented over a computer network. Unfortunately the setup of a real network is too time and cost intensive. Hence the next best thing was chosen: A network emulation. 
+An emulation consists of all the elements of the real network only that the resources are not "real" but "virtual". While for example an emulated switch may process network traffic in the very same way as a switch in your office, it could be implemented as a linux process.
 
 \begin{figure}[h!]
     \begin{center}
