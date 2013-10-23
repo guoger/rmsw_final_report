@@ -15,7 +15,7 @@ Two threads are coexisting (see figure \ref{fig:flow_diag}). The active thread c
     \label{fig:flow_diag}
 \end{figure}
 
-Data created this way over one graph is analyzed in R. We compare our four different topologies (mentioned above) and visualize the results as charts.
+Data created this way over one graph is analyzed in R. We compare our four different topologies (mentioned above) and visualize the results as charts. The code of our program as well as the results below are available at github: \url{https://github.com/metaswirl/py_gossip}
 
 \subsection{Simulation of gossip-based aggregation}
 In a network simulation the network is simplified so as to illuminate a certain set of behaviors (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is abstracted as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbor is randomly chosen to form a state exchange pair, and then aggregation operation, in this case add and divide by two, is applied. In this manner, convergence and different behaviors of four topologies can be predicted without running the actual emulation.
