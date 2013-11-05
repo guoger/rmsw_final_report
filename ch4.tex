@@ -1,30 +1,62 @@
 \section{Results \& Discussion}
 \label{sec:result}
+\ref{fig:sim_result} indicates the result of gossip-based aggregation averaging simulation as illustrated in section~\ref{sec:simulation}. 
 \begin{figure}[h!]
 	\centering
-    \begin{minipage}[t]{0.47\textwidth}
+    \begin{subfigure}[t]{0.47\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{figures/Simulation_averaging/ReunaAvgSim.png}
+    \caption{Reuna Averaging Simulation}
+    \end{subfigure}
+    %\vspace{5ex}
+    \begin{subfigure}[t]{0.47\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{figures/Simulation_averaging/BrenAvgSim.png}
+    \caption{Bren Averaging Simulation}
+    \end{subfigure}
+    \vspace{5ex}
+    \begin{subfigure}[t]{0.47\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{figures/Simulation_averaging/GeantAvgSim.png}
+    \caption{Geant Averaging experiment}
+    \end{subfigure}
+    %\vspace{5ex}
+    \begin{subfigure}[t]{0.47\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=\linewidth]{figures/Simulation_averaging/IijAvgSim.png}
+    \caption{Iij averaging experiment}
+    \end{subfigure}
+    \caption{State changes of all nodes per epoch}
+    \label{fig:sim_result}
+
+\end{figure}
+%TODO: define convergence criteria and derive the convergence speed.
+
+\begin{figure}[h!]
+	\centering
+    \begin{subfigure}[t]{0.47\textwidth}
     \vspace{0pt}
     \includegraphics[width=\linewidth]{figures/Reuna.png}
-    Reuna Averaging experiment
-    \end{minipage}
+    \caption{Reuna Averaging experiment}
+    \end{subfigure}
     %\vspace{5ex}
-    \begin{minipage}[t]{0.47\textwidth}
+    \begin{subfigure}[t]{0.47\textwidth}
     \vspace{0pt}
     \includegraphics[width=\linewidth]{figures/Bren.png}
-    Bren Averaging experiment
-    \end{minipage}
+    \caption{Bren Averaging experiment}
+    \end{subfigure}
     \vspace{5ex}
-    \begin{minipage}[t]{0.47\textwidth}
+    \begin{subfigure}[t]{0.47\textwidth}
     \vspace{0pt}
     \includegraphics[width=\linewidth]{figures/Geant.png}
-    Geant Averaging experiment
-    \end{minipage}
+    \caption{Geant Averaging experiment}
+    \end{subfigure}
     %\vspace{5ex}
-    \begin{minipage}[t]{0.47\textwidth}
+    \begin{subfigure}[t]{0.47\textwidth}
     \vspace{0pt}
     \includegraphics[width=\linewidth]{figures/Iij.png}
-    Iij averaging experiment
-    \end{minipage}
+    \caption{Iij averaging experiment}
+    \end{subfigure}
     \caption{State changes of all nodes per epoch}
     \label{fig:result}
 
