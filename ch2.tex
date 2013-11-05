@@ -56,7 +56,7 @@ $\mbox{while true:}$
 \end{lstlisting}
 \end{figure}
 
-Although convergence is proven and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain a empirical criteria according to the result of experiments.
+Although convergence is proven and expected convergence time can be estimated by probability density function for a certain topology \cite{5929538}, a drawback of probabilistic algorithm comparing to deterministic algorithm is reliability \cite{Lynch:1996:DA:525656}. The value can only be considered as true result at a certain probability. To put this protocol into practice, some extra procedures need to be added. In this study, we leave out the test of correctness inside implementation but try to obtain an empirical criteria according to the result of experiments.
 
 \subsection{Impact of topology toward the performance of aggregation}
 A plenty of methods exist to describe overlay topologies of a network, and different representations are used to describe properties of a topology. On the other hand, the performance of gossip-based aggregation is also abstracted differently for specific purpose.
@@ -93,7 +93,6 @@ In order to apply control variable experiment method, we based our experiment on
    \caption{Different graph topologies (in ring layout)}
    \label{fig:graphs}
 \end{figure}
-\subsection{Gossip-based aggregation}
 \begin{table}
 \centering
 \begin{tabular}{lrrcrr}
@@ -103,7 +102,7 @@ In order to apply control variable experiment method, we based our experiment on
     Reuna & 2010 & Chile & 36\\% & 202.0476 & 0.5164084\\
     BREN & 2010 & Bulgaria & 38\\% & 210.2229 & 0.6214745\\
     Geant & 2010 & Europe & 58\\% & 277.3282 & 1.530375\\
-    Iij & 2010 & Japen, USA & 66\\% & 307.2482 & 1.553654\\
+    Iij & 2010 & Japan, USA & 66\\% & 307.2482 & 1.553654\\
     \hline
 \end{tabular}
 \caption{Topologies under investigation}
@@ -122,5 +121,5 @@ We clearly distinguish ourselves from realism, as we use network graphs inspired
 
 Since we will investigate several existing networks with the same number of nodes (constant) but different number of links (variable), we choose experimental research as our research method.
 
-We will apply inductive reasoning research approach to verify the hypothesis. Since our unique contribution is an investigation of real network rather than a theoretical proof, deductive reasoning research approach won't fit our goal properly. 
+We will apply inductive reasoning research approach to verify the hypothesis. Since our unique contribution is an investigation of real network rather than a theoretical proof, deductive reasoning research approach does not fit our goal properly.
 %We will run our experiment multiple times to collect data and based on the observation of these phenomena we can obtain our conclusion.

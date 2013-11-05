@@ -1,8 +1,9 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{scrartcl}
 
 \textwidth=15cm \hoffset=-1.2cm %
 \textheight=25cm \voffset=-2cm %
 \pagestyle{empty}
+\parskip1ex
 
 \date{}
 
@@ -25,27 +26,27 @@
 \def\titulo#1{\title{#1}} %
 \def\autores#1{\author{#1}} %
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Evaluating Gossip-based aggregation\\{\large An experimental study using network emulation}}
 % Authors
 \author{Niklas Semmler <semmler@kth.se>\\
 Jiannan Guo <jiannang@kth.se>\\[0,25cm]
 Supervisor: Prof. Maguire <maguire@kth.se>\\
 KTH Royal Institute of Technology}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 % Type down your paper title
 %
 \maketitle
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% This "." is necessary to let the line start on the left
 {.} \\
 \HRule \\
 \begin{abstract}
-In this study we briefly introduce the gossip algorithm and aggregation mechanism. We address the influence of network topologies on the performance of a gossip-based aggregation algorithm. Several analytical studies are discussed. We make two hypothesis regarding the relation between algorithm performance and underlying topologies. A basic gossip-based aggregation is implemented and it's performance is determined in a network emulator. Four different network topologies serve as our conditions. We collect data out of experiments and utilize statistical method to verify our hypothesis.
+In this study we briefly introduce the gossip algorithm and aggregation mechanism. We address the influence of network topologies on the performance of a gossip-based aggregation algorithm. Several analytical studies are discussed. We make two hypothesis regarding the relation between algorithm performance and underlying topologies. A basic gossip-based aggregation is implemented and its performance is determined in a network emulator. Four different network topologies serve as our conditions. We collect data out of experiments and utilize statistical method to test our hypothesis.
 %TODO: add conclusion
 \end{abstract}
 \HRule \\
-
 \keywords{Gossip-based aggregation, network emulation}% TODO: refine keywords
 
 %\newpage
@@ -62,9 +63,7 @@ In this study we briefly introduce the gossip algorithm and aggregation mechanis
 
 %%%%%% End of Chapters %%%%%%%%%%
 
-\newpage
-
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{report}
 
 \appendix
