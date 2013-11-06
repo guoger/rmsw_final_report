@@ -34,7 +34,6 @@ This study is mainly based on the work of M.Jelasity, A.Montresor and O.Babaoglu
 \subsubsection{Gossip algorithm}
 For better understanding of gossip algorithm, we assume a graph as in figure \ref{fig:epochs}. It illustrates a typical message dissemination process applying gossip algorithm. It starts with one node containing the information to be propagated, as in subgraph (a). It randomly chooses one neighbor and send the message. In second epoch, as showed in subgraph (b), this message is passed forward to next hop in the same manner, including the root node. By recursively applying same procedures, the message will be passed through the whole network eventually. Subgraph (c) shows the occurrence of probable redundant packet from node 3 to node 2, who's already aware of the message. Because of randomness of gossip algorithm, complete dissemination can only be achieved at a certain probability within given epochs, which can be denoted as $D(x)=\int_0^x P(\xi)\mathrm{d}\xi$\\
 
-
 \subsubsection{Aggregation}
 % TODO: illustrate aggregation
 

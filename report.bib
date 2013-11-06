@@ -55,10 +55,9 @@ abstract = "In this survey we overview the definitions and methods for graph clu
 },
 
 @inproceedings{KyasanurCG06,
-  added-at = {2011-08-22T00:00:00.000+0200},
   author = {Kyasanur, Pradeep and Choudhury, Romit Roy and Gupta, Indranil},
   biburl = {http://www.bibsonomy.org/bibtex/23ea95fc34ae7dc7b28523f59b7a114b1/dblp},
-  booktitle = {MASS},
+  booktitle = {Mobile Adhoc and Sensor Systems (MASS), 2006 IEEE International Conference on},
   ee = {http://dx.doi.org/10.1109/MOBHOC.2006.278671},
   interhash = {78433cee0269ae2d05e8f6880a264f68},
   intrahash = {3ea95fc34ae7dc7b28523f59b7a114b1},
@@ -66,7 +65,7 @@ abstract = "In this survey we overview the definitions and methods for graph clu
   pages = {91-100},
   publisher = {IEEE},
   timestamp = {2011-08-22T00:00:00.000+0200},
-  title = {Smart Gossip: An Adaptive Gossip-based Broadcasting Service for Sensor Networks.},
+  title = {Smart Gossip: An Adaptive Gossip-based Broadcasting Service for Sensor Networks},
   url = {http://dblp.uni-trier.de/db/conf/mass/mass2006.html#KyasanurCG06},
   year = 2006
 },
@@ -86,8 +85,9 @@ abstract = "In this survey we overview the definitions and methods for graph clu
   author    = {Adrian Segall and
                Inder S. Gopal},
   title     = {Distributed Name Assignment in Computer Networks},
-  journal   = {Computer Networks},
+  journal = {Computer Networks and \{ISDN\} Systems} ,
   volume    = {17},
+  number    = {2},
   year      = {1989},
   pages     = {127-139},
   ee        = {http://dx.doi.org/10.1016/0169-7552(89)90005-6},
@@ -141,13 +141,20 @@ ISSN={0018-9286},}
 },
 
 @INPROCEEDINGS{entropy2,
-    author = {Ricard V. Sole and Sergi Valverde},
+    author={Sol{\'e}, Ricard V and Valverde, Sergi},
     title = {Information theory of complex networks: On evolution and architectural constraints},
-    booktitle = {In},
+    booktitle = {Lecture Notes in Physics: Complex Networks},
+	volume = {650},
     year = {2004},
     pages = {189--210},
     publisher = {Springer-Verlag}
 },
+@incollection{sole2004information,
+        title={Information theory of complex networks: On evolution and architectural constraints},
+            pages={189--207},
+                year={2004},
+                publisher={Springer}
+}
 
 @inproceedings{massoulie_peer_2006,
 	address = {New York, {NY}, {USA}},
@@ -192,14 +199,13 @@ ISSN={0018-9286},}
 },
 
 @techreport{Stadler529980,
-author = {Stadler, Rolf},
-institution = {KTH, Communication Networks},
-note = {QC 20120604},
-pages = {29},
-title = {Protocols for Distributed Management},
-series = {Trita-EE},
-number = {2012:028},
-year = {2012}
+    author = {Stadler, Rolf},
+    institution = {KTH, Royal Institute of Technology, Sweden},
+    pages = {29},
+    title = {Protocols for Distributed Management},
+    series = {Trita-EE},
+    number = {2012:028},
+    year = {2012}
 },
 
 @article{alvisi_how_2007,
@@ -360,7 +366,7 @@ booktitle={Decision and Control, 2004. CDC. 43rd IEEE Conference on},
 title={Analysis and optimization of randomized gossip algorithms}, 
 year={2004}, 
 volume={5}, 
-pages={5310-5315 Vol.5}, 
+pages={5310-5315}, 
 abstract={We study the distributed averaging problem on an arbitrary network with a gossip constraint, which means that no node communicates with more than one neighbour in every time slot. We consider algorithms which are linear iterations, where each iteration is described by a random matrix picked i.i.d. from some distribution. We derive conditions that this distribution must satisfy so that the sequence of iterations converges to the vector of averages in different senses. We then analyze a simple asynchronous randomized gossip algorithm for averaging, and show that the problem of optimizing the parameters of this algorithm for fastest convergence is a semi-definite program. Finally we study the relation between Markov chains and the averaging problem, and relate the averaging time of the algorithm to the mixing time of a related Markov chain on the graph.}, 
 keywords={Markov processes;convergence;graph theory;iterative methods;matrix algebra;randomised algorithms;Markov chains;asynchronous algorithm;distributed averaging problem;randomized gossip algorithms;semi-definite program;Algorithm design and analysis;Circuits and systems;Context;Contracts;Convergence;Distributed computing;Information systems;Laboratories;Protocols;Vectors}, 
 doi={10.1109/CDC.2004.1429652}, 
@@ -412,7 +418,10 @@ ISSN={0191-2216},}
     booktitle = {Proceedings of the 4th International Conference on Testbeds and research infrastructures for the development of networks \& communities},
     author = {Pizzonia, Maurizio and Rimondini, Massimo},
     year = {2008},
-    pages = {7},
+    articleno = {7},
+    numpages = {10},
+    publisher = {ICST (Institute for Computer Sciences, Social-Informatics and Telecommunications Engineering)},
+    pages = {7:1--7:10},
     file = {[PDF] van gnunet.org:/Users/pharaoh/Library/Application Support/Zotero/Profiles/yup0kitu.default/zotero/storage/95E9V7AH/Pizzonia and Rimondini - 2008 - Netkit easy emulation of complex networks on inex.pdf:application/pdf;Snapshot:/Users/pharaoh/Library/Application Support/Zotero/Profiles/yup0kitu.default/zotero/storage/KV9UUEDD/citation.html:text/html}
 },
 
@@ -430,11 +439,14 @@ ISSN={0191-2216},}
 @inproceedings{autonetkit,
     title = {{AutoNetkit:} simplifying large scale, open-source network experimentation},
     shorttitle = {{AutoNetkit}},
+    series = {SIGCOMM '12},
+    location = {Helsinki, Finland},
     url = {http://dl.acm.org/citation.cfm?id=2342378},
     urldate = {2013-10-21},
     booktitle = {Proceedings of the {ACM} {SIGCOMM} 2012 conference on Applications, technologies, architectures, and protocols for computer communication},
     author = {Knight, Simon and Jaboldinov, Askar and Maennel, Olaf and Phillips, Iain and Roughan, Matthew},
     year = {2012},
+    publisher = {ACM},
     pages = {97-98},
     file = {[PDF] van gnunet.org:/Users/pharaoh/Library/Application Support/Zotero/Profiles/yup0kitu.default/zotero/storage/DTFZEX8B/Knight et al. - 2012 - AutoNetkit simplifying large scale, open-source n.pdf:application/pdf;Snapshot:/Users/pharaoh/Library/Application Support/Zotero/Profiles/yup0kitu.default/zotero/storage/T5SFVK6G/citation.html:text/html}
 },
@@ -443,6 +455,8 @@ ISSN={0191-2216},}
     title = {Python Programming Language - Official Website},
     url = {http://www.python.org/},
     urldate = {2013-10-21},
+    month = oct,
+    year = {2013},
     author = {Python Software Foundation},
     file = {Python Programming Language - Official Website:/Users/pharaoh/Library/Application Support/Zotero/Profiles/yup0kitu.default/zotero/storage/A5U5TUPC/www.python.org.html:text/html}
 }
