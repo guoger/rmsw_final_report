@@ -3,9 +3,6 @@
 Before doing the actual experiment we did a preliminary analysis via simulation. The experiment contains of three components. First, the implementation of the gossip-based aggregation is clarified. Next, the network emulation context is presented. Finally it is shown under which conditions the experiment was run.
 
 \subsection{Simulation of gossip-based aggregation}
-\label{sec:simulation}
-In a network simulation, the network is simplified so as to illuminate a certain set of behaviours (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is simplified as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbour is randomly chosen to form a state exchange pair, and then aggregation operation is applied to them, which in this case is add-and-divide-by-two. Pseudo code can be found in listing \ref{code:simulation}. In this manner, convergence and different behaviours of four topologies can be predicted before running the actual emulation.
-
 \begin{figure}[!h]
 \begin{lstlisting}[caption={Pseudo Code for gossip-based aggregation simulation}, label=code:simulation, mathescape=true, captionpos=b]
 G = all_nodes
@@ -16,6 +13,9 @@ while(i <= Max_epoch)
 		n.state = n.state + m.state
 \end{lstlisting}
 \end{figure}
+\label{sec:simulation}
+In a network simulation, the network is simplified so as to illuminate a certain set of behaviours (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is simplified as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbour is randomly chosen to form a state exchange pair, and then aggregation operation is applied to them, which in this case is add-and-divide-by-two. Pseudo code can be found in listing \ref{code:simulation}. In this manner, convergence and different behaviours of four topologies can be predicted before running the actual emulation.
+
 \begin{figure}[h!]
     \begin{center}
         \includegraphics[scale=0.25]{flow_diag.jpg}

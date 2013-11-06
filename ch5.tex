@@ -1,7 +1,6 @@
-\section{Conclusion \& Future work}
+\section{Conclusion}
 \label{sec:conclusion}
 
-\subsection{Conclusion}
 % What we did
 In this paper gossip-based aggregation was introduced. Its advantages as a distributed algorithm over centralized algorithms were explained and pseudo code was provided. Furthermore the experiment, which was supposed to show the dependency of convergence in gossip-based aggregation on the number of links in the network, was presented. The methods used to realize the experiment were highlighted and the choice for an emulated network was argued for. Finally the results of our research were discussed and depicted as charts.
 
@@ -11,7 +10,8 @@ The data shows strong support for our hypothesis. The graphs with high number of
 % Implications
 We believe that the gossip-based aggregation has very interesting properties for network management. The advantages would become more visible if instead of a toy value a more network relevant variable such as the general load distribution were used. Would such a value be available to each node the node could use the global information to optimize its own decisions. By simply changing the next-hop for outgoing packets it would already have a significant impact on the overall error rate of the network (drop rate of packets).
 
-\subsection{Future work}
+\section{Future work}
+\label{sec:future}
 In our study, we only consider number of links yet there are many other attributes of a graph which could possibly impact aggregation performance such as graph clustering\cite{Schaeffer200727}, connectivity, randomness, max-flow min-cut etc. For one instance, although the difference between the number of links of {\it Reuna} and {\it Bren} is only two, the performance of both simulation and emulation varies significantly. If we look into the actual topologies of these two network, {\it Reuna} is a star-based topology without loops but {\it Bren} indicates a closer connectivity. Thus, connectivity could potentially impact the performance of aggregation, which need to be further verified.
 On another perspective, since we assume an undirected unweighted static topology, some crucial properties of a real network such as link speed and congestion are not reflected by our study. Another possible extension would be to take node churn into account.
 
