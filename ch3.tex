@@ -4,7 +4,7 @@ Before doing the actual experiment we did a preliminary analysis via simulation.
 
 \subsection{Simulation of gossip-based aggregation}
 \label{sec:simulation}
-In a network simulation, the network is simplified so as to illuminate a certain set of behaviours (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is simplified as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbour is randomly chosen to form a state exchange pair, and then aggregation operation is applied to them, which in this case is add-and-divide-by-two. Pseudo code can be found in \ref{code:simulation}. In this manner, convergence and different behaviours of four topologies can be predicted before running the actual emulation.
+In a network simulation, the network is simplified so as to illuminate a certain set of behaviours (e.g. Network Simulator \cite{ns}). For the purpose of simulation, gossip-based aggregation in one epoch is simplified as a pair choosing process: in every epoch, every node is iterated exact once and one of its neighbour is randomly chosen to form a state exchange pair, and then aggregation operation is applied to them, which in this case is add-and-divide-by-two. Pseudo code can be found in listing \ref{code:simulation}. In this manner, convergence and different behaviours of four topologies can be predicted before running the actual emulation.
 
 \begin{figure}[!h]
 \begin{lstlisting}[caption={Pseudo Code for gossip-based aggregation simulation}, label=code:simulation, mathescape=true, captionpos=b]
@@ -16,11 +16,6 @@ while(i <= Max_epoch)
 		n.state = n.state + m.state
 \end{lstlisting}
 \end{figure}
-
-\subsection{Implementation of gossip-based aggregation daemon}
-As the gossip agent in our emulated network we developed a daemon based on the pseudo code of the gossip-based aggregation algorithm (see section \ref{sec:theory}). The programming language Python \cite{python} was chosen for this task as its simplicity and clarity enable rapid development. Packets between nodes were exchanged in short lived TCP connections. The daemons on the individual nodes are started from outside the emulation system and write a log and results to the host system. After a number of epochs (successive fixed intervals) the daemons exit.
-
-Two threads coexist (see figure \ref{fig:flow_diag}). The active thread connects to randomly chosen neighbours at an epoch duration. The passive thread accepts connection all the time. Each thread update the state of the node after a successful connection. To make the state develop linearly both threads have to compete for a lock before establishing a connection. \footnote{Combining multithreading with networking led to some problems, especially when two nodes chose to actively create a connection with each other at the same time.}
 \begin{figure}[h!]
     \begin{center}
         \includegraphics[scale=0.25]{flow_diag.jpg}
@@ -28,6 +23,11 @@ Two threads coexist (see figure \ref{fig:flow_diag}). The active thread connects
     \caption{Flow diagram of the threads}
     \label{fig:flow_diag}
 \end{figure}
+
+\subsection{Implementation of gossip-based aggregation daemon}
+As the gossip agent in our emulated network we developed a daemon based on the pseudo code of the gossip-based aggregation algorithm (see section \ref{sec:theory}). The programming language Python \cite{python} was chosen for this task as its simplicity and clarity enable rapid development. Packets between nodes were exchanged in short lived TCP connections. The daemons on the individual nodes are started from outside the emulation system and write a log and results to the host system. After a number of epochs (successive fixed intervals) the daemons exit.
+
+Two threads coexist (see figure \ref{fig:flow_diag}). The active thread connects to randomly chosen neighbours at an epoch duration. The passive thread accepts connection all the time. Each thread update the state of the node after a successful connection. To make the state develop linearly both threads have to compete for a lock before establishing a connection. %\footnote{Combining multithreading with networking led to some problems, especially when two nodes chose to actively create a connection with each other at the same time.}
 
 Data created this way over one graph is analysed in R. We compare our four different topologies (mentioned above) and visualise the results as charts. The code of our program as well as the results below are available at github: \url{https://github.com/metaswirl/py_gossip}
 
@@ -46,6 +46,8 @@ An emulation consists of all the elements of the real network only that the reso
 In this research the Netkit emulation framework (itself a wrapper to user mode linux \cite{uml}) was chosen. Netkit \cite{netkit} creates virtual linux machines from a set of configuration files. These virtual machines are automatically connected through usermode processes called "uml\_switch". It is possible to log on to the machines via ssh and configure them just like any other linux machines. This allows great freedom to try and test software which otherwise would be hard to implement.
 
 The initial set of configuration files were created with the tool Autonetkit \cite{autonetkit} using network graphs from the "Topology Zoo" \cite{knight_internet_2011}. The "Topology Zoo" is a collection of around two hundred fifty graphs of telecommunication networks. The graphs are open for use and give a good idea on the reality of communication networks. Simon Knight, one of the founders of the topology zoo has developed the tool Autonetkit. It takes a graph xml file (graphml) and constructs per host configuration files (from OSPF to DNS). For the purpose of this experiment Autonetkit was augmented to create for our gossip agent a file containing all neighbors of the individual nodes.
+
+In summary real networks have been described in graphs at the topology zoo With the help of Autonetkit we create per host configuration files. These serve in turn as input for the user mode linux virtualization. See figure \ref{fig:graph_to_emulation} for a visualization of the four steps.
 
 \subsection{Running the experiment}
 The experiment was run on a host with 64 cores, each with 2299 MHz and 126GB of memory. Each virtual machine required 32Mbs of memory. The operating system was Ubuntu 11.10.
